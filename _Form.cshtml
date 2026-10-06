@@ -1,0 +1,17 @@
+@model Resume
+<div asp-validation-summary="All" class="text-danger"></div>
+<input type="hidden" asp-for="Id" />
+<div class="row g-3">
+    <div class="col-md-6"><label asp-for="Title" class="form-label">Resume name (only for you)</label><input asp-for="Title" class="form-control" placeholder="Web designer resume" /></div>
+    <div class="col-md-6"><label asp-for="Template" class="form-label">Template</label>
+        <select asp-for="Template" class="form-select"><option>Classic</option><option>Modern</option><option>Minimal</option></select></div>
+    <div class="col-md-6"><label asp-for="FullName" class="form-label">Full name</label><input asp-for="FullName" class="form-control" /></div>
+    <div class="col-md-6"><label asp-for="Email" class="form-label">Email</label><input asp-for="Email" class="form-control" /></div>
+    <div class="col-md-6"><label asp-for="Phone" class="form-label">Phone</label><input asp-for="Phone" class="form-control" /></div>
+    <div class="col-md-6"><label asp-for="Address" class="form-label">City / address</label><input asp-for="Address" class="form-control" /></div>
+    <div class="col-12"><label asp-for="Summary" class="form-label">Short summary</label><textarea asp-for="Summary" rows="3" class="form-control"></textarea></div>
+    <div class="col-12"><label asp-for="Skills" class="form-label">Skills (separate with commas)</label><input asp-for="Skills" class="form-control" placeholder="Canva, Word, Data entry" /></div>
+    <div class="col-12"><label asp-for="Education" class="form-label">Education (one per line)</label><textarea asp-for="Education" rows="3" class="form-control"></textarea></div>
+    <div class="col-12"><label asp-for="Experience" class="form-label">Experience (one per line)</label><textarea asp-for="Experience" rows="3" class="form-control"></textarea></div>
+    <div class="col-12"><label asp-for="Projects" class="form-label">Projects (one per line)</label><textarea asp-for="Projects" rows="3" class="form-control"></textarea></div>
+</div>

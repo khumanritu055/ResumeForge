@@ -1,0 +1,14 @@
+@model RegisterVm
+@{ ViewData["Title"] = "Sign up"; }
+<div class="row justify-content-center"><div class="col-md-5">
+<div class="card rf-card"><div class="card-body">
+    <h4 class="mb-3">Create account</h4>
+    <form asp-action="Register" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3"><label asp-for="Name" class="form-label">Full name</label><input asp-for="Name" class="form-control" /></div>
+        <div class="mb-3"><label asp-for="Email" class="form-label">Email</label><input asp-for="Email" class="form-control" /></div>
+        <div class="mb-3"><label asp-for="Password" class="form-label">Password</label><input asp-for="Password" type="password" class="form-control" /></div>
+        <button class="btn btn-rf w-100">Create account</button>
+    </form>
+    <p class="text-center mt-3 mb-0"><a asp-action="Login">Already have an account? Log in</a></p>
+</div></div></div></div>

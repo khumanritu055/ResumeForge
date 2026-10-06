@@ -1,0 +1,7 @@
+@model Resume
+@{ ViewData["Title"] = "Create resume"; }
+<h4 class="mb-3">Create a resume</h4>
+<form asp-action="Create" method="post">
+    <partial name="_Form" model="Model" />
+    <button class="btn btn-rf mt-3">Save and preview</button>
+</form>

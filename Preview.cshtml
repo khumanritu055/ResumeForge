@@ -1,0 +1,41 @@
+@model Resume
+@functions {
+    static string[] Lines(string s) => string.IsNullOrWhiteSpace(s) ? new string[0]
+        : s.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    static string[] Items(string s) => string.IsNullOrWhiteSpace(s) ? new string[0]
+        : s.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+}
+@{ ViewData["Title"] = Model.Title; }
+<div class="d-flex gap-2 mb-3 no-print">
+    <button class="btn btn-rf" onclick="window.print()">Download as PDF</button>
+    <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+</div>
+<p class="text-muted small no-print">In the print window, choose "Save as PDF" as the printer.</p>
+
+<article class="resume t-@Model.Template">
+    <header>
+        <h1>@Model.FullName</h1>
+        <div class="contact">@Model.Email @(string.IsNullOrWhiteSpace(Model.Phone) ? "" : " | " + Model.Phone) @(string.IsNullOrWhiteSpace(Model.Address) ? "" : " | " + Model.Address)</div>
+    </header>
+    @if (!string.IsNullOrWhiteSpace(Model.Summary))
+    {
+        <section><h2>Summary</h2><p>@Model.Summary</p></section>
+    }
+    @if (Items(Model.Skills).Length > 0)
+    {
+        <section><h2>Skills</h2><div>@foreach (var s in Items(Model.Skills)) { <span class="skill">@s</span> }</div></section>
+    }
+    @if (Lines(Model.Education).Length > 0)
+    {
+        <section><h2>Education</h2><ul>@foreach (var l in Lines(Model.Education)) { <li>@l</li> }</ul></section>
+    }
+    @if (Lines(Model.Experience).Length > 0)
+    {
+        <section><h2>Experience</h2><ul>@foreach (var l in Lines(Model.Experience)) { <li>@l</li> }</ul></section>
+    }
+    @if (Lines(Model.Projects).Length > 0)
+    {
+        <section><h2>Projects</h2><ul>@foreach (var l in Lines(Model.Projects)) { <li>@l</li> }</ul></section>
+    }
+</article>

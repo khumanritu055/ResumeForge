@@ -1,0 +1,39 @@
+:root{--ink:#3a1f2b;--accent:#2ec4b6;--paper:#f8f5f6;--line:#e2d8dc}
+body{background:var(--paper);color:var(--ink);font-family:"Segoe UI",system-ui,sans-serif}
+.rf-nav{background:var(--ink)}.rf-nav .navbar-brand{color:#fff}
+.btn-rf{background:var(--accent);color:#04302c;font-weight:600;border:0}
+.btn-rf:hover{background:#25ab9f;color:#04302c}
+.rf-hero{background:var(--ink);color:#fff}.rf-hero h1{font-weight:700;max-width:18ch}
+.rf-card{border:1px solid var(--line);border-radius:6px;background:#fff}
+.stat{font-size:1.7rem;font-weight:700}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Resume preview */
+.resume{background:#fff;max-width:800px;margin:0 auto;padding:2.2rem 2.6rem;box-shadow:0 2px 12px rgba(0,0,0,.12);line-height:1.5}
+.resume h1{font-size:2rem;margin:0}
+.resume h2{font-size:1.05rem;margin:1.2rem 0 .4rem}
+.resume ul{padding-left:1.1rem;margin:0}
+.resume .contact{color:#555;margin-top:.2rem}
+.resume .skill{display:inline-block;border:1px solid #bbb;border-radius:3px;padding:.05rem .5rem;margin:0 .3rem .3rem 0;font-size:.9rem}
+.t-Classic{font-family:Georgia,serif;border-top:10px solid var(--ink)}
+.t-Classic h2{border-bottom:1px solid #999;padding-bottom:.15rem}
+.t-Modern header{background:var(--accent);color:#04302c;margin:-2.2rem -2.6rem 1rem;padding:1.6rem 2.6rem}
+.t-Modern header .contact{color:#04302c}
+.t-Modern h2{color:var(--ink);border-left:5px solid var(--accent);padding-left:.5rem}
+.t-Minimal{font-family:"Segoe UI",Arial,sans-serif;padding:2.6rem 3rem}
+.t-Minimal h1{font-weight:300;letter-spacing:1px}
+.t-Minimal h2{font-weight:600;font-size:.95rem;color:#666}
+@media print{
+  .no-print{display:none!important}
+  body{background:#fff}
+  main.container{max-width:100%;margin:0!important;padding:0}
+  .resume{box-shadow:none;max-width:100%}
+}
+
+/* ---- Footer ---- */
+body{min-height:100vh;display:flex;flex-direction:column}
+main{flex:1 0 auto}
+.app-footer{background:var(--ink);color:#d9dde3;text-align:center;padding:1.1rem 0;margin-top:2rem;font-size:.95rem}
+.app-footer strong{color:#fff}
+.app-footer .sep{opacity:.5;margin:0 .6rem}
+@media print{.app-footer{display:none}}

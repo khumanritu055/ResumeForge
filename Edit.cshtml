@@ -1,0 +1,8 @@
+@model Resume
+@{ ViewData["Title"] = "Edit resume"; }
+<h4 class="mb-3">Edit resume</h4>
+<form asp-action="Edit" method="post">
+    <partial name="_Form" model="Model" />
+    <button class="btn btn-rf mt-3">Save changes</button>
+    <a class="btn btn-outline-secondary mt-3" asp-action="Index">Cancel</a>
+</form>
